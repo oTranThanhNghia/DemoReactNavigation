@@ -1,15 +1,38 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import Home from "app/Home";
-import Details from "app/Details";
+import {
+  createAppContainer,
+  createBottomTabNavigator,
+  createStackNavigator
+} from "react-navigation";
+import HomeScreen from "app/HomeScreen";
+import DetailsScreen from "app/DetailsScreen";
+import SettingsScreen from "app/SettingsScreen";
 
-const AppNavigator = createStackNavigator(
+const HomeStack = createStackNavigator({
+  Home: { screen: HomeScreen },
+  Details: { screen: DetailsScreen }
+});
+
+const SettingsStack = createStackNavigator({
+  Settings: { screen: SettingsScreen },
+  Details: { screen: DetailsScreen }
+});
+
+const AppNavigator = createBottomTabNavigator(
   {
-    Home: { screen: Home },
-    Details: { screen: Details }
+    Home: {
+      screen: HomeStack,
+      navigationOptions: {
+        title: "Home"
+      }
+    },
+    Setting: {
+      screen: SettingsStack,
+      navigationOptions: {
+        title: "Setting"
+      }
+    }
   },
-  {
-    initialRouteName: "Home"
-  }
+  {}
 );
 
 export default createAppContainer(AppNavigator);

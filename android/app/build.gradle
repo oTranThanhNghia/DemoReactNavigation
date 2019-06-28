@@ -101,6 +101,15 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    signingConfigs {
+        dev {
+            keyAlias "nghia"
+            keyPassword "12345678"
+            storeFile file('../keystores/dev.keystore')
+            storePassword "12345678"
+        }
+    }
+
     defaultConfig {
         applicationId "com.demoreactnavigation"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -117,7 +126,13 @@ android {
         }
     }
     buildTypes {
+
+        debug {
+           signingConfig signingConfigs.dev
+        }
+
         release {
+            signingConfig signingConfigs.dev
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

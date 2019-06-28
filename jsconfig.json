@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "app/*": ["app/*"]
