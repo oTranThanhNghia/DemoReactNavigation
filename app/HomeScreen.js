@@ -10,6 +10,7 @@ export default class HomeScreen extends Component {
           title="Go to Details"
           onPress={() => this.props.navigation.navigate("Details")}
         />
+        <Text>Update app 0</Text>
       </View>
     );
   }
