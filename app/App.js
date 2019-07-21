@@ -20,7 +20,10 @@ const instructions = Platform.select({
 
 type Props = {};
 
-let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+let codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+  installMode: codePush.InstallMode.IMMEDIATE
+};
 class App extends Component<Props> {
   render() {
     return <AppNavigator />;
