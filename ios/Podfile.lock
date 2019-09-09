@@ -6,21 +6,36 @@ PODS:
     - AppCenter/Core
   - AppCenterReactNativeShared (2.1.0):
     - AppCenter/Core (= 2.1.0)
+  - React (0.59.9):
+    - React/Core (= 0.59.9)
+  - React/Core (0.59.9):
+    - yoga (= 0.59.9.React)
+  - yoga (0.59.9.React)
 
 DEPENDENCIES:
   - AppCenter/Analytics (~> 2.1.0)
   - AppCenter/Crashes (~> 2.1.0)
   - AppCenterReactNativeShared (~> 2.1.0)
+  - React (from `../node_modules/react-native`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AppCenter
     - AppCenterReactNativeShared
 
+EXTERNAL SOURCES:
+  React:
+    :path: "../node_modules/react-native"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
+
 SPEC CHECKSUMS:
   AppCenter: 21decaa4488024e8355e650e44ccabb69ca60d47
   AppCenterReactNativeShared: 6e856a993f022a2a7afaa1bc21834d4dded708b2
+  React: 1d605e098d69bdf08960787f3446f0a9dc2e2ccf
+  yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
 
-PODFILE CHECKSUM: 2edd0e6e4cccd014bb51a3de8e78f567a6db56e6
+PODFILE CHECKSUM: 5528e0cddbf85c84bca1e67bdc9c20e0f016889d
 
 COCOAPODS: 1.5.3

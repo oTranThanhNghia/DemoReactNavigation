@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
+import i18n from "app/utils/i18n";
 
 export default class SettingsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Setting</Text>
+        <Text>{i18n.t("setting")}</Text>
         <Button
-          title="Go to Details"
+          title={i18n.t("go_to_detail")}
           onPress={() => this.props.navigation.navigate("Details")}
         />
       </View>

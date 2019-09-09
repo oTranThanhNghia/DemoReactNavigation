@@ -6,33 +6,47 @@ import {
 import HomeScreen from "app/HomeScreen";
 import DetailsScreen from "app/DetailsScreen";
 import SettingsScreen from "app/SettingsScreen";
+import i18n from "app/utils/i18n";
 
-const HomeStack = createStackNavigator({
-  Home: { screen: HomeScreen },
-  Details: { screen: DetailsScreen }
-});
+const back_title = i18n.t("back");
 
-const SettingsStack = createStackNavigator({
-  Settings: { screen: SettingsScreen },
-  Details: { screen: DetailsScreen }
-});
-
-const AppNavigator = createBottomTabNavigator(
+const HomeStack = createStackNavigator(
   {
-    Home: {
-      screen: HomeStack,
-      navigationOptions: {
-        title: "Home"
-      }
-    },
-    Setting: {
-      screen: SettingsStack,
-      navigationOptions: {
-        title: "Setting"
-      }
+    Home: { screen: HomeScreen },
+    Details: { screen: DetailsScreen }
+  },
+  {
+    defaultNavigationOptions: {
+      headerBackTitle: back_title
+    }
+  }
+);
+
+const SettingsStack = createStackNavigator(
+  {
+    Settings: { screen: SettingsScreen },
+    Details: { screen: DetailsScreen }
+  },
+  {
+    defaultNavigationOptions: {
+      headerBackTitle: back_title
+    }
+  }
+);
+
+const AppNavigator = createBottomTabNavigator({
+  Home: {
+    screen: HomeStack,
+    navigationOptions: {
+      title: i18n.t("home")
     }
   },
-  {}
-);
+  Setting: {
+    screen: SettingsStack,
+    navigationOptions: {
+      title: i18n.t("setting")
+    }
+  }
+});
 
 export default createAppContainer(AppNavigator);

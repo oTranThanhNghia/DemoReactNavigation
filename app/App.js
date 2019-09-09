@@ -30,7 +30,7 @@ class App extends Component<Props> {
   }
 }
 
-export default codePush(codePushOptions)(App);
+export default App; //codePush(codePushOptions)(App);
 
 const styles = StyleSheet.create({
   // eslint-disable-next-line react-native/no-color-literals

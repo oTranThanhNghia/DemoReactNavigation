@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
+import i18n from "app/utils/i18n";
 
 export default class DetailsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Details</Text>
+        <Text>{i18n.t("detail")}</Text>
       </View>
     );
   }
